@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="https://images.emojiterra.com/google/noto-emoji/v2.034/512px/1f4dd.png"
+			type="image/x-icon"
+		/>
+		<title>SheCodes Basics: Week 1 Homework</title>
+
+		<style>
+			html {
+				font-family: sans-serif;
+				color: #1b1b1c;
+			}
+
+			h1 {
+				color: #1965d4;
+				text-align: center;
+			}
+
+			button {
+				text-align: center;
+				display: block;
+				margin: 0 auto;
+				padding: 16px 23px;
+				color: white;
+				font-size: 16px;
+
+				border-radius: 40px;
+				background-color: #1965d4;
+				border: 1px solid #1965d4;
+			}
+
+			button:hover {
+				background-color: white;
+				color: #1965d4;
+			}
+
+			#subtitle {
+				font-weight: normal;
+				color: #1b1b1c;
+			}
+
+			#credit {
+				text-align: center;
+				font-family: monospace;
+				font-size: 18px;
+				color: #535353;
+			}
+
+			.card {
+				text-align: center;
+				margin: 0px auto;
+				padding: 10px;
+				width: 400px;
+				border-radius: 15px;
+				transition: all 300ms ease-in-out;
+			}
+
+			.card:hover {
+				background-color: #fff9f0;
+			}
+
+			.card-title {
+				font-weight: bold;
+				font-size: 18.5px;
+			}
+
+			.card-info {
+				font-family: monospace;
+				font-size: 18px;
+				color: #535353;
+			}
+
+			.container {
+				margin: 10px 0 20px 0px;
+				padding: 0;
+			}
+
+			.heading {
+				list-style: none;
+				color: #1965d4;
+				text-align: center;
+				font-size: 34px;
+				margin: 0 auto;
+				font-weight: bold;
+				padding: 0;
+			}
+
+			.heading li {
+				padding: 5px 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="heading">
+			<li><span id="symbol">🌤</span></li>
+			<li>
+				Currently <span id="temperature">21°</span> in
+				<span id="city">Tokyo</span>
+			</li>
+			<li>
+				<span id="subtitle">13° / <b>23°</b></span>
+			</li>
+		</ul>
+
+		<div class="container">
+			<div class="card">
+				<p class="card-title">🌧Tomorrow</p>
+				<p class="card-info">10° / <b>22°</b></p>
+			</div>
+
+			<div class="card">
+				<p class="card-title">🌥 Saturday</p>
+				<p class="card-info">15° / <b>17°</b></p>
+			</div>
+
+			<div class="card">
+				<p class="card-title">☀️ Sunday</p>
+				<p class="card-info">25° / <b>28°</b></p>
+			</div>
+		</div>
+
+		<button>Change city</button>
+
+		<p id="credit">Coded by Isabelle (Loariya-Fiaba) Zennah</p>
+
+		<script>
+			function Questions() {
+				let city = prompt("What city do you live in?");
+				let temp = prompt("What is the temperature there?");
+				changeText(city, temp);
+			}
+
+			function changeText(x, y) {
+				let htmlTemp = document.querySelector("#temperature");
+				let htmlCity = document.querySelector("#city");
+				let symbol = document.querySelector("#symbol");
+
+				htmlTemp.innerHTML = `${y}°`;
+				htmlCity.innerHTML = x;
+				symbol.innerHTML = "😊";
+			}
+
+			let button = document.querySelector("button");
+			button.addEventListener("click", Questions);
+		</script>
+	</body>
+</html>
